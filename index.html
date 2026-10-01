@@ -5,24 +5,108 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#03050a">
+
 <title>Happy Birthday Lokesh ⚡</title>
 
 <style>
 *{
   box-sizing:border-box;
   margin:0;
-  padding:0
+  padding:0;
 }
 
 html{
-  scroll-behavior:smooth
+  scroll-behavior:smooth;
 }
 
 body{
   background:#02040a;
   color:#fff;
   font-family:Arial,sans-serif;
-  overflow-x:hidden
+  overflow-x:hidden;
+}
+
+/* =========================
+   CLICK TO OPEN SCREEN
+========================= */
+
+#openingScreen{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(circle at center,
+      rgba(20,45,90,.35),
+      rgba(0,0,0,.98) 70%),
+    #02040a;
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+#openingScreen.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.openContent{
+  text-align:center;
+  animation:openPulse 2.5s ease-in-out infinite;
+}
+
+.openSmall{
+  font-size:10px;
+  letter-spacing:6px;
+  color:#777;
+  margin-bottom:25px;
+}
+
+.openButton{
+  position:relative;
+  border:1px solid rgba(255,255,255,.45);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  padding:20px 38px;
+  border-radius:4px;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:4px;
+  cursor:pointer;
+  backdrop-filter:blur(15px);
+  box-shadow:
+    0 0 30px rgba(255,255,255,.08),
+    inset 0 0 20px rgba(255,255,255,.03);
+  transition:.35s ease;
+}
+
+.openButton:hover{
+  transform:scale(1.06);
+  border-color:#e62429;
+  box-shadow:
+    0 0 35px rgba(230,36,41,.4),
+    inset 0 0 20px rgba(230,36,41,.1);
+}
+
+.openButton:active{
+  transform:scale(.96);
+}
+
+.openLine{
+  width:70px;
+  height:1px;
+  background:#e62429;
+  margin:25px auto 0;
+  box-shadow:0 0 15px #e62429;
+}
+
+@keyframes openPulse{
+  50%{
+    transform:translateY(-5px);
+  }
 }
 
 /* =========================
@@ -36,7 +120,13 @@ body{
   height:100%;
   object-fit:cover;
   z-index:-10;
-  background:#02040a
+  background:#02040a;
+  opacity:0;
+  transition:opacity 1.5s ease;
+}
+
+body.started #bgVideo{
+  opacity:1;
 }
 
 .videoShade{
@@ -44,19 +134,32 @@ body{
   inset:0;
   z-index:-9;
   background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.72)),
+    linear-gradient(
+      rgba(0,0,0,.45),
+      rgba(0,0,0,.72)
+    ),
     radial-gradient(
       circle at 50% 35%,
       transparent 0 25%,
       rgba(0,0,0,.55) 75%
-    )
+    );
+  opacity:0;
+  transition:opacity 1.5s ease;
 }
+
+body.started .videoShade{
+  opacity:1;
+}
+
+/* =========================
+   EFFECTS
+========================= */
 
 .grid{
   position:fixed;
   inset:0;
   z-index:-7;
-  opacity:.18;
+  opacity:0;
   background:
     linear-gradient(
       rgba(50,140,255,.18) 1px,
@@ -73,24 +176,31 @@ body{
     rotateX(55deg)
     scale(1.8);
   transform-origin:center bottom;
-  animation:gridMove 7s linear infinite
+  animation:gridMove 7s linear infinite;
+  transition:opacity 1.5s ease;
+}
+
+body.started .grid{
+  opacity:.18;
 }
 
 @keyframes gridMove{
   to{
-    background-position:0 70px,70px 0
+    background-position:0 70px,70px 0;
   }
 }
-
-/* =========================
-   ENERGY
-========================= */
 
 .energy{
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:-5
+  z-index:-5;
+  opacity:0;
+  transition:opacity 1.5s ease;
+}
+
+body.started .energy{
+  opacity:1;
 }
 
 .energy:before,
@@ -102,7 +212,7 @@ body{
   top:48%;
   transform:translate(-50%,-50%);
   border:1px solid rgba(0,150,255,.5);
-  animation:spin 12s linear infinite
+  animation:spin 12s linear infinite;
 }
 
 .energy:before{
@@ -110,7 +220,7 @@ body{
   height:55vw;
   box-shadow:
     0 0 70px rgba(0,120,255,.12),
-    inset 0 0 70px rgba(0,120,255,.12)
+    inset 0 0 70px rgba(0,120,255,.12);
 }
 
 .energy:after{
@@ -118,14 +228,14 @@ body{
   height:35vw;
   border-color:rgba(255,45,45,.4);
   animation-direction:reverse;
-  animation-duration:8s
+  animation-duration:8s;
 }
 
 @keyframes spin{
   to{
     transform:
       translate(-50%,-50%)
-      rotate(360deg)
+      rotate(360deg);
   }
 }
 
@@ -139,7 +249,7 @@ body{
   background:#fff;
   opacity:0;
   pointer-events:none;
-  z-index:50
+  z-index:10000;
 }
 
 /* =========================
@@ -157,86 +267,33 @@ nav{
   justify-content:space-between;
   align-items:center;
   background:linear-gradient(#000b,transparent);
-  backdrop-filter:blur(5px)
+  backdrop-filter:blur(5px);
+
+  opacity:0;
+  transform:translateY(-15px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 
-/* HBD starts hidden */
+body.started nav{
+  opacity:1;
+  transform:translateY(0);
+}
+
 .brand{
   font-weight:900;
   letter-spacing:3px;
-
-  opacity:0;
-  transform:translateY(-12px);
-
-  transition:
-    opacity .6s ease,
-    transform .6s ease
-}
-
-.brand.reveal{
-  opacity:1;
-  transform:translateY(0)
 }
 
 .brand span{
-  color:#e62429
+  color:#e62429;
 }
 
 .status{
   font-size:10px;
   letter-spacing:2px;
-  color:#76b7ff
-}
-
-/* =========================
-   SCROLL DOWN
-========================= */
-
-.scrollHint{
-  position:fixed;
-  left:50%;
-  bottom:28px;
-  transform:translateX(-50%);
-  z-index:25;
-
-  padding:10px 18px;
-
-  border:1px solid #ffffff35;
-  border-radius:30px;
-
-  background:#050812aa;
-  backdrop-filter:blur(15px);
-
-  color:#fff;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:3px;
-
-  opacity:0;
-  pointer-events:none;
-
-  transition:
-    opacity .4s,
-    transform .4s
-}
-
-.scrollHint.show{
-  opacity:1;
-  animation:scrollHintPulse 1.5s ease-in-out infinite
-}
-
-@keyframes scrollHintPulse{
-  0%,100%{
-    transform:
-      translateX(-50%)
-      translateY(0)
-  }
-
-  50%{
-    transform:
-      translateX(-50%)
-      translateY(8px)
-  }
+  color:#76b7ff;
 }
 
 /* =========================
@@ -249,15 +306,11 @@ section{
   display:flex;
   align-items:center;
   justify-content:center;
-  position:relative
+  position:relative;
 }
 
-/* =========================
-   HERO
-========================= */
-
 .hero{
-  text-align:center
+  text-align:center;
 }
 
 .kicker,
@@ -265,7 +318,7 @@ section{
   font-size:11px;
   letter-spacing:5px;
   color:#ffcc4d;
-  font-weight:700
+  font-weight:700;
 }
 
 h1{
@@ -273,13 +326,13 @@ h1{
   line-height:.85;
   margin:25px 0;
   font-weight:1000;
-  text-shadow:0 0 40px #000
+  text-shadow:0 0 40px #000;
 }
 
 h1 span{
   display:block;
   color:#e62429;
-  text-shadow:0 0 35px #f00
+  text-shadow:0 0 35px #f00;
 }
 
 .hero p,
@@ -287,12 +340,8 @@ h1 span{
   max-width:720px;
   margin:25px auto;
   color:#d0d7e5;
-  line-height:1.8
+  line-height:1.8;
 }
-
-/* =========================
-   ENTER BUTTON
-========================= */
 
 .enter,
 .glassBtn{
@@ -305,7 +354,7 @@ h1 span{
   letter-spacing:2px;
   cursor:pointer;
   backdrop-filter:blur(15px);
-  transition:.3s
+  transition:.3s;
 }
 
 .enter{
@@ -316,76 +365,63 @@ h1 span{
       #e62429,
       #780000
     );
-
-  box-shadow:
-    0 0 30px #e6242944
+  box-shadow:0 0 30px #e6242944;
 }
 
 .enter:hover,
 .glassBtn:hover{
-  transform:scale(1.04)
+  transform:scale(1.04);
 }
 
 /* =========================
-   CARD
+   DATABASE
 ========================= */
 
 .card{
   width:min(1050px,100%);
   padding:45px;
-
   border:1px solid #ffffff20;
-
   background:#05070db8;
   backdrop-filter:blur(18px);
-
-  box-shadow:
-    0 30px 100px #0008
+  box-shadow:0 30px 100px #0008;
 }
 
 .card h2{
   font-size:clamp(32px,6vw,70px);
-  margin:15px 0
+  margin:15px 0;
 }
 
 .red{
-  color:#e62429
+  color:#e62429;
 }
-
-/* =========================
-   PROFILE
-========================= */
 
 .profile{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:30px
+  gap:30px;
 }
 
 .profile img{
   width:100%;
   height:500px;
-  object-fit:cover
+  object-fit:cover;
 }
 
 .info{
   display:flex;
   flex-direction:column;
-  justify-content:center
+  justify-content:center;
 }
 
 .line{
   display:flex;
   justify-content:space-between;
-
   padding:13px;
   margin-top:9px;
-
   background:#ffffff08;
   border-left:2px solid #e62429;
-
   font-size:11px;
-  letter-spacing:2px
+  letter-spacing:2px;
 }
 
 /* =========================
@@ -396,38 +432,33 @@ h1 span{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
-  width:min(1200px,100%)
+  width:min(1200px,100%);
 }
 
 .photo{
   height:500px;
   position:relative;
   overflow:hidden;
-
   border:1px solid #ffffff20;
-  background:#080b12
+  background:#080b12;
 }
 
 .photo img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:.7s
+  transition:.7s;
 }
 
 .photo:hover img{
-  transform:scale(1.08)
+  transform:scale(1.08);
 }
 
 .photo:after{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(
-      transparent 45%,
-      #000d
-    )
+  background:linear-gradient(transparent 45%,#000d);
 }
 
 .photo b{
@@ -435,9 +466,8 @@ h1 span{
   z-index:2;
   bottom:20px;
   left:20px;
-
   letter-spacing:3px;
-  font-size:11px
+  font-size:11px;
 }
 
 /* =========================
@@ -446,39 +476,32 @@ h1 span{
 
 .portal{
   position:absolute;
-
   width:55vw;
   height:55vw;
-
   border-radius:50%;
-
   border:2px solid #178cff55;
-
   box-shadow:
     0 0 80px #087cff22,
     inset 0 0 80px #087cff22;
-
-  animation:
-    spin 15s linear infinite
+  animation:spin 15s linear infinite;
 }
 
 .portal:after{
   content:"";
   position:absolute;
   inset:12%;
-
   border:1px solid #e6242966;
-  border-radius:50%
+  border-radius:50%;
 }
 
 .multiverse{
-  text-align:center
+  text-align:center;
 }
 
 .multiverse .inner{
   position:relative;
   z-index:2;
-  max-width:800px
+  max-width:800px;
 }
 
 /* =========================
@@ -486,17 +509,14 @@ h1 span{
 ========================= */
 
 .surprise{
-  text-align:center
+  text-align:center;
 }
 
 .core{
   width:180px;
   height:180px;
-
   border-radius:50%;
-
   margin:45px auto;
-
   background:
     radial-gradient(
       circle,
@@ -506,32 +526,27 @@ h1 span{
       #280000 55%,
       #02040a 70%
     );
-
   box-shadow:
     0 0 40px #e62429aa,
     0 0 120px #ff9d0022;
-
   display:grid;
   place-items:center;
-
   cursor:pointer;
-
-  animation:pulse 2s infinite
+  animation:pulse 2s infinite;
 }
 
 .core span{
   font-size:11px;
   font-weight:900;
-  letter-spacing:2px
+  letter-spacing:2px;
 }
 
 @keyframes pulse{
   50%{
     transform:scale(1.08);
-
     box-shadow:
       0 0 65px #e62429dd,
-      0 0 150px #ff9d0044
+      0 0 150px #ff9d0044;
   }
 }
 
@@ -539,9 +554,8 @@ h1 span{
   display:none;
   max-width:700px;
   margin:auto;
-
   color:#d0d7e5;
-  line-height:1.9
+  line-height:1.9;
 }
 
 /* =========================
@@ -549,17 +563,17 @@ h1 span{
 ========================= */
 
 .final{
-  text-align:center
+  text-align:center;
 }
 
 .final h2{
   font-size:clamp(45px,9vw,110px);
-  line-height:.9
+  line-height:.9;
 }
 
 .final h2 span{
   display:block;
-  color:#e62429
+  color:#e62429;
 }
 
 /* =========================
@@ -570,22 +584,28 @@ h1 span{
   position:fixed;
   right:20px;
   bottom:20px;
-
   z-index:30;
-
   width:54px;
   height:54px;
-
   border-radius:50%;
-
   border:1px solid #fff3;
-
   background:#050812cc;
   color:#fff;
-
   backdrop-filter:blur(15px);
+  cursor:pointer;
 
-  cursor:pointer
+  opacity:0;
+  transform:scale(.7);
+  pointer-events:none;
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+body.started .music{
+  opacity:1;
+  transform:scale(1);
+  pointer-events:auto;
 }
 
 /* =========================
@@ -595,11 +615,9 @@ h1 span{
 footer{
   text-align:center;
   padding:30px;
-
   color:#667085;
-
   font-size:10px;
-  letter-spacing:2px
+  letter-spacing:2px;
 }
 
 /* =========================
@@ -609,37 +627,36 @@ footer{
 @media(max-width:800px){
 
   .status{
-    display:none
+    display:none;
   }
 
   .profile{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .profile img{
-    height:420px
+    height:420px;
   }
 
   .photos{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .photo{
-    height:430px
+    height:430px;
   }
 
   section{
-    padding:100px 5%
+    padding:100px 5%;
   }
 
   .card{
-    padding:25px
+    padding:25px;
   }
 
-  .scrollHint{
-    bottom:22px;
-    font-size:9px;
-    padding:9px 15px
+  .openButton{
+    padding:18px 28px;
+    font-size:11px;
   }
 }
 </style>
@@ -647,11 +664,38 @@ footer{
 
 <body>
 
-<!-- BACKGROUND VIDEO -->
+<!-- =========================
+     OPENING SCREEN
+========================= -->
+
+<div id="openingScreen">
+
+  <div class="openContent">
+
+    <div class="openSmall">
+      A SPECIAL CELEBRATION
+    </div>
+
+    <button
+      class="openButton"
+      onclick="openBirthday()">
+      CLICK TO OPEN
+    </button>
+
+    <div class="openLine"></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     BACKGROUND VIDEO
+     DOES NOT AUTOPLAY
+========================= -->
 
 <video
   id="bgVideo"
-  autoplay
   muted
   loop
   playsinline
@@ -663,13 +707,16 @@ footer{
 
 </video>
 
+
 <div class="videoShade"></div>
 <div class="grid"></div>
 <div class="energy"></div>
 <div class="flash" id="flash"></div>
 
 
-<!-- NAV -->
+<!-- =========================
+     NAV
+========================= -->
 
 <nav>
 
@@ -684,18 +731,9 @@ footer{
 </nav>
 
 
-<!-- SCROLL INDICATOR -->
-
-<div
-  class="scrollHint"
-  id="scrollHint">
-
-  SCROLL DOWN ↓
-
-</div>
-
-
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -712,8 +750,7 @@ footer{
 
     <p>
       Team lo chala mandi heroes unna...
-      kaani ee roju spotlight motham
-      okka hero meedhe.
+      kaani ee roju spotlight motham okka hero meedhe.
       <b>LOKESH.</b> ⚡
     </p>
 
@@ -730,7 +767,9 @@ footer{
 </section>
 
 
-<!-- HERO DATABASE -->
+<!-- =========================
+     HERO DATABASE
+========================= -->
 
 <section>
 
@@ -743,11 +782,9 @@ footer{
     <div class="profile">
 
       <div>
-
         <img
           src="assets/lokesh1.jpg"
           alt="Lokesh Photo 1">
-
       </div>
 
       <div class="info">
@@ -757,12 +794,10 @@ footer{
         </h2>
 
         <p class="copy">
-
           Ee roju ordinary birthday kaadu.
-          Mana own hero ki special celebration.
-          ❤️ Full year happiness, success,
-          crazy moments tho super ga undali.
-
+          Mana own hero ki special celebration. ❤️
+          Full year happiness, success, crazy moments
+          tho super ga undali.
         </p>
 
         <div class="line">
@@ -794,7 +829,9 @@ footer{
 </section>
 
 
-<!-- HERO ARCHIVE -->
+<!-- =========================
+     HERO ARCHIVE
+========================= -->
 
 <section>
 
@@ -807,7 +844,7 @@ footer{
     <h2
       style="
         font-size:clamp(32px,6vw,65px);
-        margin:15px 0 25px
+        margin:15px 0 25px;
       ">
 
       THREE MOMENTS
@@ -861,7 +898,9 @@ footer{
 </section>
 
 
-<!-- MULTIVERSE -->
+<!-- =========================
+     MULTIVERSE
+========================= -->
 
 <section class="multiverse">
 
@@ -876,7 +915,7 @@ footer{
     <h2
       style="
         font-size:clamp(35px,6vw,75px);
-        margin:20px 0
+        margin:20px 0;
       ">
 
       CHALA UNIVERSES UNNAYI...
@@ -906,7 +945,9 @@ footer{
 </section>
 
 
-<!-- SURPRISE -->
+<!-- =========================
+     SURPRISE
+========================= -->
 
 <section class="surprise">
 
@@ -919,7 +960,7 @@ footer{
     <h2
       style="
         font-size:clamp(32px,6vw,65px);
-        margin-top:15px
+        margin-top:15px;
       ">
 
       ONE MORE THING...
@@ -928,8 +969,8 @@ footer{
 
     <p class="copy">
 
-      Ee button click chesthe
-      special surprise unlock avuthundi. 👀
+      Ee button click chesthe special surprise
+      unlock avuthundi. 👀
 
     </p>
 
@@ -951,12 +992,9 @@ footer{
 
       <p>
 
-        Lokesh, nee life lo next chapter
-        inka crazy ga, happy ga,
-        successful ga undali.
-
-        Ee year full power tho
-        enjoy cheyyi ra! ❤️🔥
+        Lokesh, nee life lo next chapter inka crazy ga,
+        happy ga, successful ga undali.
+        Ee year full power tho enjoy cheyyi ra! ❤️🔥
 
       </p>
 
@@ -967,7 +1005,9 @@ footer{
 </section>
 
 
-<!-- FINAL -->
+<!-- =========================
+     FINAL
+========================= -->
 
 <section class="final">
 
@@ -991,9 +1031,8 @@ footer{
 
     <p class="copy">
 
-      Ee year motham happiness,
-      success & unforgettable moments
-      tho fill avvali. 🔥
+      Ee year motham happiness, success &
+      unforgettable moments tho fill avvali. 🔥
 
     </p>
 
@@ -1002,14 +1041,16 @@ footer{
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
+
   MADE FOR LOKESH • HERO MODE FOREVER ⚡
+
 </footer>
 
 
-<!-- MUSIC -->
+<!-- =========================
+     MUSIC
+========================= -->
 
 <button
   class="music"
@@ -1034,162 +1075,144 @@ footer{
 
 <script>
 
-/* =========================
-   FIRST INTERACTION
-   HBD REVEAL
-========================= */
+/* ==========================================
+   MAIN OPEN FUNCTION
+   CLICK TO OPEN -> START EVERYTHING
+========================================== */
 
-let firstInteractionDone = false;
+function openBirthday(){
 
-function revealHBD(){
+  const opening =
+    document.getElementById("openingScreen");
 
-  if(firstInteractionDone) return;
-
-  firstInteractionDone = true;
-
-  const brand =
-    document.querySelector('.brand');
-
-  brand.classList.add('reveal');
-
-
-  /* Small cinematic flash */
-
-  document
-    .getElementById('flash')
-    .animate(
-      [
-        {opacity:0},
-        {opacity:.35},
-        {opacity:0}
-      ],
-      {
-        duration:500,
-        easing:'ease-out'
-      }
-    );
-
-
-  /* Remove listeners */
-
-  document.removeEventListener(
-    'pointerdown',
-    revealHBD
-  );
-
-  document.removeEventListener(
-    'keydown',
-    revealHBD
-  );
-
-}
-
-
-/* Detect first touch / click / keyboard */
-
-document.addEventListener(
-  'pointerdown',
-  revealHBD
-);
-
-document.addEventListener(
-  'keydown',
-  revealHBD
-);
-
-
-/* =========================
-   ENTER CELEBRATION
-========================= */
-
-function enterSite(){
+  const video =
+    document.getElementById("bgVideo");
 
   const music =
-    document.getElementById('music');
+    document.getElementById("music");
 
   const musicBtn =
-    document.getElementById('musicBtn');
+    document.getElementById("musicBtn");
 
   const flash =
-    document.getElementById('flash');
-
-  const scrollHint =
-    document.getElementById('scrollHint');
+    document.getElementById("flash");
 
 
-  /* Start music */
+  /* Start the website */
 
-  music.play()
-    .then(()=>{
-
-      musicBtn.textContent='🔊';
-
-    })
-    .catch(()=>{});
+  document.body.classList.add("started");
 
 
-  /* Cinematic flash */
+  /* Flash effect */
 
   flash.animate(
     [
       {opacity:0},
-      {opacity:.8},
+      {opacity:.75},
       {opacity:0}
     ],
     {
-      duration:700,
-      easing:'ease-out'
+      duration:900,
+      easing:"ease-out"
     }
   );
 
 
-  /* Find HERO DATABASE */
+  /* Start Avengers background video */
 
-  const nextSection =
-    document
-      .querySelector('.hero')
-      .nextElementSibling;
-
-
-  /* Smooth scroll */
-
-  nextSection.scrollIntoView({
-    behavior:'smooth',
-    block:'start'
+  video.play().catch(()=>{
+    console.log("Video autoplay after click failed.");
   });
 
 
-  /* Show scroll indicator */
+  /* Start music */
+
+  music.play().then(()=>{
+
+    musicBtn.textContent="🔊";
+
+  }).catch(()=>{
+
+    musicBtn.textContent="🔇";
+
+  });
+
+
+  /* Hide opening screen */
 
   setTimeout(()=>{
 
-    scrollHint.classList.add('show');
+    opening.classList.add("hide");
 
-    setTimeout(()=>{
+  },150);
 
-      scrollHint.classList.remove('show');
 
-    },5000);
+  /* Prevent background scroll before opening */
 
-  },700);
+  document.body.style.overflow="auto";
 
 }
 
 
-/* =========================
+/* ==========================================
+   ENTER THE CELEBRATION
+========================================== */
+
+function enterSite(){
+
+  const music =
+    document.getElementById("music");
+
+  const musicBtn =
+    document.getElementById("musicBtn");
+
+  music.play().then(()=>{
+
+    musicBtn.textContent="🔊";
+
+  }).catch(()=>{});
+
+
+  document
+    .getElementById("flash")
+    .animate(
+      [
+        {opacity:0},
+        {opacity:.8},
+        {opacity:0}
+      ],
+      {
+        duration:700
+      }
+    );
+
+
+  /* Move to Hero Database */
+
+  const hero =
+    document.querySelector(".hero");
+
+  hero.nextElementSibling.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+/* ==========================================
    SURPRISE
-========================= */
+========================================== */
 
 function surprise(){
 
   const message =
-    document.getElementById('message');
+    document.getElementById("message");
 
-  message.style.display='block';
+  message.style.display="block";
 
 
   document
-    .getElementById('flash')
+    .getElementById("flash")
     .animate(
       [
         {opacity:0},
@@ -1204,52 +1227,65 @@ function surprise(){
 }
 
 
-/* =========================
+/* ==========================================
    MUSIC TOGGLE
-========================= */
+========================================== */
 
 function musicToggle(){
 
   const audio =
-    document.getElementById('music');
+    document.getElementById("music");
 
   const button =
-    document.getElementById('musicBtn');
+    document.getElementById("musicBtn");
 
 
   if(audio.paused){
 
     audio.play();
 
-    button.textContent='🔊';
+    button.textContent="🔊";
 
   }else{
 
     audio.pause();
 
-    button.textContent='🔇';
+    button.textContent="🔇";
 
   }
 
 }
 
 
-/* =========================
-   VIDEO ERROR FALLBACK
-========================= */
+/* ==========================================
+   VIDEO ERROR HANDLING
+========================================== */
 
 const video =
-  document.getElementById('bgVideo');
+  document.getElementById("bgVideo");
 
-video.addEventListener(
-  'error',
-  ()=>{
-    video.style.display='none';
-  }
-);
+video.addEventListener("error",()=>{
+
+  video.style.display="none";
+
+});
+
+
+/* ==========================================
+   PAGE LOAD
+   EVERYTHING LOCKED UNTIL CLICK
+========================================== */
+
+document.body.style.overflow="hidden";
 
 </script>
 
 </body>
 </html>
 ```
+
+**Flow now:** `OPEN PAGE → CLICK TO OPEN → ⚡ HBD LOKESH + HAPPY BIRTHDAY + Avengers video + music → existing website`.
+
+`assets/avengers-bg.mp4`, `assets/music.mp3`, `assets/lokesh1.jpg`, `lokesh2.jpg`, `lokesh3.jpg` paths మాత్రం same ga ఉంచాను. ❤️🔥
+
+If you want, next we can make the **“CLICK TO OPEN” screen itself more cinematic—like a Marvel/Avengers-style opening gate with a glowing arc-reactor effect**.
