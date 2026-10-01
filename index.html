@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,133 +6,1180 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#03050a">
 <title>Happy Birthday Lokesh ⚡</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#02040a;color:#fff;font-family:Arial,sans-serif;overflow-x:hidden}
-#bgVideo{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-10;background:#02040a}
-.videoShade{position:fixed;inset:0;z-index:-9;background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.72)),
-radial-gradient(circle at 50% 35%,transparent 0 25%,rgba(0,0,0,.55) 75%)}
-.grid{position:fixed;inset:0;z-index:-7;opacity:.18;background:
-linear-gradient(rgba(50,140,255,.18) 1px,transparent 1px),
-linear-gradient(90deg,rgba(50,140,255,.18) 1px,transparent 1px);
-background-size:70px 70px;transform:perspective(500px) rotateX(55deg) scale(1.8);transform-origin:center bottom;animation:gridMove 7s linear infinite}
-@keyframes gridMove{to{background-position:0 70px,70px 0}}
-.energy{position:fixed;inset:0;pointer-events:none;z-index:-5}
-.energy:before,.energy:after{content:"";position:absolute;border-radius:50%;left:50%;top:48%;transform:translate(-50%,-50%);border:1px solid rgba(0,150,255,.5);animation:spin 12s linear infinite}
-.energy:before{width:55vw;height:55vw;box-shadow:0 0 70px rgba(0,120,255,.12),inset 0 0 70px rgba(0,120,255,.12)}
-.energy:after{width:35vw;height:35vw;border-color:rgba(255,45,45,.4);animation-direction:reverse;animation-duration:8s}
-@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-.flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:50}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(#000b,transparent);backdrop-filter:blur(5px)}
-.brand{font-weight:900;letter-spacing:3px}.brand span{color:#e62429}.status{font-size:10px;letter-spacing:2px;color:#76b7ff}
-section{min-height:100vh;padding:120px 7%;display:flex;align-items:center;justify-content:center;position:relative}
-.hero{text-align:center}
-.kicker,.label{font-size:11px;letter-spacing:5px;color:#ffcc4d;font-weight:700}
-h1{font-size:clamp(55px,11vw,140px);line-height:.85;margin:25px 0;font-weight:1000;text-shadow:0 0 40px #000}
-h1 span{display:block;color:#e62429;text-shadow:0 0 35px #f00}
-.hero p,.copy{max-width:720px;margin:25px auto;color:#d0d7e5;line-height:1.8}
-.enter,.glassBtn{border:1px solid #ffffff55;background:#ffffff12;color:white;padding:15px 25px;border-radius:5px;font-weight:800;letter-spacing:2px;cursor:pointer;backdrop-filter:blur(15px);transition:.3s}
-.enter{background:linear-gradient(90deg,#780000,#e62429,#780000);box-shadow:0 0 30px #e6242944}
-.enter:hover,.glassBtn:hover{transform:scale(1.04)}
-.card{width:min(1050px,100%);padding:45px;border:1px solid #ffffff20;background:#05070db8;backdrop-filter:blur(18px);box-shadow:0 30px 100px #0008}
-.card h2{font-size:clamp(32px,6vw,70px);margin:15px 0}.red{color:#e62429}
-.profile{display:grid;grid-template-columns:1fr 1fr;gap:30px}.profile img{width:100%;height:500px;object-fit:cover}.info{display:flex;flex-direction:column;justify-content:center}.line{display:flex;justify-content:space-between;padding:13px;margin-top:9px;background:#ffffff08;border-left:2px solid #e62429;font-size:11px;letter-spacing:2px}
-.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:min(1200px,100%)}.photo{height:500px;position:relative;overflow:hidden;border:1px solid #ffffff20;background:#080b12}.photo img{width:100%;height:100%;object-fit:cover;transition:.7s}.photo:hover img{transform:scale(1.08)}.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,#000d)}.photo b{position:absolute;z-index:2;bottom:20px;left:20px;letter-spacing:3px;font-size:11px}
-.portal{position:absolute;width:55vw;height:55vw;border-radius:50%;border:2px solid #178cff55;box-shadow:0 0 80px #087cff22,inset 0 0 80px #087cff22;animation:spin 15s linear infinite}.portal:after{content:"";position:absolute;inset:12%;border:1px solid #e6242966;border-radius:50%}
-.multiverse{text-align:center}.multiverse .inner{position:relative;z-index:2;max-width:800px}
-.surprise{text-align:center}.core{width:180px;height:180px;border-radius:50%;margin:45px auto;background:radial-gradient(circle,#fff 0 3%,#ffcc4d 8%,#e62429 30%,#280000 55%,#02040a 70%);box-shadow:0 0 40px #e62429aa,0 0 120px #ff9d0022;display:grid;place-items:center;cursor:pointer;animation:pulse 2s infinite}.core span{font-size:11px;font-weight:900;letter-spacing:2px}@keyframes pulse{50%{transform:scale(1.08);box-shadow:0 0 65px #e62429dd,0 0 150px #ff9d0044}}
-#message{display:none;max-width:700px;margin:auto;color:#d0d7e5;line-height:1.9}.final{text-align:center}.final h2{font-size:clamp(45px,9vw,110px);line-height:.9}.final h2 span{display:block;color:#e62429}.music{position:fixed;right:20px;bottom:20px;z-index:30;width:54px;height:54px;border-radius:50%;border:1px solid #fff3;background:#050812cc;color:#fff;backdrop-filter:blur(15px);cursor:pointer}
-footer{text-align:center;padding:30px;color:#667085;font-size:10px;letter-spacing:2px}
-@media(max-width:800px){.status{display:none}.profile{grid-template-columns:1fr}.profile img{height:420px}.photos{grid-template-columns:1fr}.photo{height:430px}section{padding:100px 5%}.card{padding:25px}}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  background:#02040a;
+  color:#fff;
+  font-family:Arial,sans-serif;
+  overflow-x:hidden
+}
+
+/* =========================
+   BACKGROUND VIDEO
+========================= */
+
+#bgVideo{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-10;
+  background:#02040a
+}
+
+.videoShade{
+  position:fixed;
+  inset:0;
+  z-index:-9;
+  background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.72)),
+    radial-gradient(
+      circle at 50% 35%,
+      transparent 0 25%,
+      rgba(0,0,0,.55) 75%
+    )
+}
+
+.grid{
+  position:fixed;
+  inset:0;
+  z-index:-7;
+  opacity:.18;
+  background:
+    linear-gradient(
+      rgba(50,140,255,.18) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(50,140,255,.18) 1px,
+      transparent 1px
+    );
+  background-size:70px 70px;
+  transform:
+    perspective(500px)
+    rotateX(55deg)
+    scale(1.8);
+  transform-origin:center bottom;
+  animation:gridMove 7s linear infinite
+}
+
+@keyframes gridMove{
+  to{
+    background-position:0 70px,70px 0
+  }
+}
+
+/* =========================
+   ENERGY RINGS
+========================= */
+
+.energy{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-5
+}
+
+.energy:before,
+.energy:after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  left:50%;
+  top:48%;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(0,150,255,.5);
+  animation:spin 12s linear infinite
+}
+
+.energy:before{
+  width:55vw;
+  height:55vw;
+  box-shadow:
+    0 0 70px rgba(0,120,255,.12),
+    inset 0 0 70px rgba(0,120,255,.12)
+}
+
+.energy:after{
+  width:35vw;
+  height:35vw;
+  border-color:rgba(255,45,45,.4);
+  animation-direction:reverse;
+  animation-duration:8s
+}
+
+@keyframes spin{
+  to{
+    transform:
+      translate(-50%,-50%)
+      rotate(360deg)
+  }
+}
+
+/* =========================
+   FLASH
+========================= */
+
+.flash{
+  position:fixed;
+  inset:0;
+  background:#fff;
+  opacity:0;
+  pointer-events:none;
+  z-index:50
+}
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:20;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:linear-gradient(#000b,transparent);
+  backdrop-filter:blur(5px)
+}
+
+.brand{
+  font-weight:900;
+  letter-spacing:3px
+}
+
+.brand span{
+  color:#e62429
+}
+
+.status{
+  font-size:10px;
+  letter-spacing:2px;
+  color:#76b7ff
+}
+
+/* =========================
+   SCROLL DOWN INDICATOR
+========================= */
+
+.scrollHint{
+  position:fixed;
+  left:50%;
+  bottom:28px;
+  transform:translateX(-50%);
+  z-index:25;
+
+  padding:10px 18px;
+
+  border:1px solid #ffffff35;
+  border-radius:30px;
+
+  background:#050812aa;
+  backdrop-filter:blur(15px);
+
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:3px;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:
+    opacity .4s,
+    transform .4s;
+}
+
+.scrollHint.show{
+  opacity:1;
+  animation:scrollHintPulse 1.5s ease-in-out infinite
+}
+
+@keyframes scrollHintPulse{
+  0%,100%{
+    transform:
+      translateX(-50%)
+      translateY(0)
+  }
+
+  50%{
+    transform:
+      translateX(-50%)
+      translateY(8px)
+  }
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+  min-height:100vh;
+  padding:120px 7%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  text-align:center
+}
+
+.kicker,
+.label{
+  font-size:11px;
+  letter-spacing:5px;
+  color:#ffcc4d;
+  font-weight:700
+}
+
+h1{
+  font-size:clamp(55px,11vw,140px);
+  line-height:.85;
+  margin:25px 0;
+  font-weight:1000;
+  text-shadow:0 0 40px #000
+}
+
+h1 span{
+  display:block;
+  color:#e62429;
+  text-shadow:0 0 35px #f00
+}
+
+.hero p,
+.copy{
+  max-width:720px;
+  margin:25px auto;
+  color:#d0d7e5;
+  line-height:1.8
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.enter,
+.glassBtn{
+  border:1px solid #ffffff55;
+  background:#ffffff12;
+  color:white;
+  padding:15px 25px;
+  border-radius:5px;
+  font-weight:800;
+  letter-spacing:2px;
+  cursor:pointer;
+  backdrop-filter:blur(15px);
+  transition:.3s
+}
+
+.enter{
+  background:
+    linear-gradient(
+      90deg,
+      #780000,
+      #e62429,
+      #780000
+    );
+
+  box-shadow:
+    0 0 30px #e6242944
+}
+
+.enter:hover,
+.glassBtn:hover{
+  transform:scale(1.04)
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+  width:min(1050px,100%);
+  padding:45px;
+
+  border:1px solid #ffffff20;
+
+  background:#05070db8;
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+    0 30px 100px #0008
+}
+
+.card h2{
+  font-size:clamp(32px,6vw,70px);
+  margin:15px 0
+}
+
+.red{
+  color:#e62429
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px
+}
+
+.profile img{
+  width:100%;
+  height:500px;
+  object-fit:cover
+}
+
+.info{
+  display:flex;
+  flex-direction:column;
+  justify-content:center
+}
+
+.line{
+  display:flex;
+  justify-content:space-between;
+
+  padding:13px;
+  margin-top:9px;
+
+  background:#ffffff08;
+  border-left:2px solid #e62429;
+
+  font-size:11px;
+  letter-spacing:2px
+}
+
+/* =========================
+   PHOTOS
+========================= */
+
+.photos{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  width:min(1200px,100%)
+}
+
+.photo{
+  height:500px;
+  position:relative;
+  overflow:hidden;
+
+  border:1px solid #ffffff20;
+  background:#080b12
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.7s
+}
+
+.photo:hover img{
+  transform:scale(1.08)
+}
+
+.photo:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      transparent 45%,
+      #000d
+    )
+}
+
+.photo b{
+  position:absolute;
+  z-index:2;
+  bottom:20px;
+  left:20px;
+
+  letter-spacing:3px;
+  font-size:11px
+}
+
+/* =========================
+   MULTIVERSE
+========================= */
+
+.portal{
+  position:absolute;
+
+  width:55vw;
+  height:55vw;
+
+  border-radius:50%;
+
+  border:2px solid #178cff55;
+
+  box-shadow:
+    0 0 80px #087cff22,
+    inset 0 0 80px #087cff22;
+
+  animation:
+    spin 15s linear infinite
+}
+
+.portal:after{
+  content:"";
+  position:absolute;
+  inset:12%;
+
+  border:1px solid #e6242966;
+  border-radius:50%
+}
+
+.multiverse{
+  text-align:center
+}
+
+.multiverse .inner{
+  position:relative;
+  z-index:2;
+  max-width:800px
+}
+
+/* =========================
+   SURPRISE
+========================= */
+
+.surprise{
+  text-align:center
+}
+
+.core{
+  width:180px;
+  height:180px;
+
+  border-radius:50%;
+
+  margin:45px auto;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff 0 3%,
+      #ffcc4d 8%,
+      #e62429 30%,
+      #280000 55%,
+      #02040a 70%
+    );
+
+  box-shadow:
+    0 0 40px #e62429aa,
+    0 0 120px #ff9d0022;
+
+  display:grid;
+  place-items:center;
+
+  cursor:pointer;
+
+  animation:pulse 2s infinite
+}
+
+.core span{
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px
+}
+
+@keyframes pulse{
+  50%{
+    transform:scale(1.08);
+
+    box-shadow:
+      0 0 65px #e62429dd,
+      0 0 150px #ff9d0044
+  }
+}
+
+#message{
+  display:none;
+  max-width:700px;
+  margin:auto;
+
+  color:#d0d7e5;
+  line-height:1.9
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+  text-align:center
+}
+
+.final h2{
+  font-size:clamp(45px,9vw,110px);
+  line-height:.9
+}
+
+.final h2 span{
+  display:block;
+  color:#e62429
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+
+  z-index:30;
+
+  width:54px;
+  height:54px;
+
+  border-radius:50%;
+
+  border:1px solid #fff3;
+
+  background:#050812cc;
+  color:#fff;
+
+  backdrop-filter:blur(15px);
+
+  cursor:pointer
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align:center;
+  padding:30px;
+
+  color:#667085;
+
+  font-size:10px;
+  letter-spacing:2px
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+  .status{
+    display:none
+  }
+
+  .profile{
+    grid-template-columns:1fr
+  }
+
+  .profile img{
+    height:420px
+  }
+
+  .photos{
+    grid-template-columns:1fr
+  }
+
+  .photo{
+    height:430px
+  }
+
+  section{
+    padding:100px 5%
+  }
+
+  .card{
+    padding:25px
+  }
+
+  .scrollHint{
+    bottom:22px;
+    font-size:9px;
+    padding:9px 15px
+  }
+}
 </style>
 </head>
+
 <body>
 
-<video id="bgVideo" autoplay muted loop playsinline preload="auto">
-  <source src="assets/avengers-bg.mp4" type="video/mp4">
-</video>
-<div class="videoShade"></div><div class="grid"></div><div class="energy"></div><div class="flash" id="flash"></div>
+<!-- =========================
+     BACKGROUND
+========================= -->
 
-<nav><div class="brand"><span>HBD</span>LOKESH</div><div class="status">● HappyBirthdayy</div></nav>
+<video
+  id="bgVideo"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto">
+
+  <source
+    src="assets/avengers-bg.mp4"
+    type="video/mp4">
+
+</video>
+
+<div class="videoShade"></div>
+<div class="grid"></div>
+<div class="energy"></div>
+<div class="flash" id="flash"></div>
+
+
+<!-- =========================
+     NAV
+========================= -->
+
+<nav>
+  <div class="brand">
+    <span>HBD</span>LOKESH
+  </div>
+
+  <div class="status">
+    ● HappyBirthdayy
+  </div>
+</nav>
+
+
+<!-- =========================
+     SCROLL HINT
+========================= -->
+
+<div class="scrollHint" id="scrollHint">
+  SCROLL DOWN ↓
+</div>
+
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
-<div>
-<div class="kicker">SPECIAL DAY // 3RD OCTOBER</div>
-<h1>HAPPY <span>BIRTHDAY</span></h1>
-<p>Team lo chala mandi heroes unna... kaani ee roju spotlight motham okka hero meedhe. <b>LOKESH.</b> ⚡</p>
-<button class="enter" onclick="enterSite()">⚡ ENTER THE CELEBRATION</button>
-</div>
+
+  <div>
+
+    <div class="kicker">
+      SPECIAL DAY // 3RD OCTOBER
+    </div>
+
+    <h1>
+      HAPPY
+      <span>BIRTHDAY</span>
+    </h1>
+
+    <p>
+      Team lo chala mandi heroes unna...
+      kaani ee roju spotlight motham
+      okka hero meedhe.
+      <b>LOKESH.</b> ⚡
+    </p>
+
+    <button
+      class="enter"
+      onclick="enterSite()">
+
+      ⚡ ENTER THE CELEBRATION
+
+    </button>
+
+  </div>
+
 </section>
 
-<section>
-<div class="card">
-<div class="label">HERO DATABASE</div>
-<div class="profile">
-<div><img src="assets/lokesh1.jpg" alt="Lokesh Photo 1"></div>
-<div class="info">
-<h2>LOK<span class="red">ESH</span></h2>
-<p class="copy">Ee roju ordinary birthday kaadu. Mana own hero ki special celebration. ❤️ Full year happiness, success, crazy moments tho super ga undali.</p>
-<div class="line"><span>CODENAME</span><span>LOKESH</span></div>
-<div class="line"><span>STATUS</span><span>LEGENDARY</span></div>
-<div class="line"><span>POWER LEVEL</span><span>∞</span></div>
-<div class="line"><span>MISSION</span><span>ENJOY LIFE</span></div>
-</div>
-</div>
-</div>
-</section>
+
+<!-- =========================
+     HERO DATABASE
+========================= -->
 
 <section>
-<div style="width:100%;max-width:1200px">
-<div class="label">HERO ARCHIVE</div><h2 style="font-size:clamp(32px,6vw,65px);margin:15px 0 25px">THREE MOMENTS</h2>
-<p class="copy" style="margin-left:0">Select Your Favorite Picture</p>
-<div class="photos">
-<div class="photo"><img src="assets/lokesh1.jpg" alt="Lokesh 1"><b>FILE // 01</b></div>
-<div class="photo"><img src="assets/lokesh2.jpg" alt="Lokesh 2"><b>FILE // 02</b></div>
-<div class="photo"><img src="assets/lokesh3.jpg" alt="Lokesh 3"><b>FILE // 03</b></div>
-</div>
-</div>
+
+  <div class="card">
+
+    <div class="label">
+      HERO DATABASE
+    </div>
+
+    <div class="profile">
+
+      <div>
+        <img
+          src="assets/lokesh1.jpg"
+          alt="Lokesh Photo 1">
+      </div>
+
+      <div class="info">
+
+        <h2>
+          LOK<span class="red">ESH</span>
+        </h2>
+
+        <p class="copy">
+          Ee roju ordinary birthday kaadu.
+          Mana own hero ki special celebration.
+          ❤️ Full year happiness, success,
+          crazy moments tho super ga undali.
+        </p>
+
+        <div class="line">
+          <span>CODENAME</span>
+          <span>LOKESH</span>
+        </div>
+
+        <div class="line">
+          <span>STATUS</span>
+          <span>LEGENDARY</span>
+        </div>
+
+        <div class="line">
+          <span>POWER LEVEL</span>
+          <span>∞</span>
+        </div>
+
+        <div class="line">
+          <span>MISSION</span>
+          <span>ENJOY LIFE</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     HERO ARCHIVE
+========================= -->
+
+<section>
+
+  <div style="width:100%;max-width:1200px">
+
+    <div class="label">
+      HERO ARCHIVE
+    </div>
+
+    <h2
+      style="
+        font-size:clamp(32px,6vw,65px);
+        margin:15px 0 25px
+      ">
+
+      THREE MOMENTS
+
+    </h2>
+
+    <p
+      class="copy"
+      style="margin-left:0">
+
+      Select Your Favorite Picture
+
+    </p>
+
+    <div class="photos">
+
+      <div class="photo">
+        <img
+          src="assets/lokesh1.jpg"
+          alt="Lokesh 1">
+
+        <b>FILE // 01</b>
+      </div>
+
+      <div class="photo">
+        <img
+          src="assets/lokesh2.jpg"
+          alt="Lokesh 2">
+
+        <b>FILE // 02</b>
+      </div>
+
+      <div class="photo">
+        <img
+          src="assets/lokesh3.jpg"
+          alt="Lokesh 3">
+
+        <b>FILE // 03</b>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     MULTIVERSE
+========================= -->
 
 <section class="multiverse">
-<div class="portal"></div>
-<div class="inner"><div class="label">MULTIVERSE EVENT</div><h2 style="font-size:clamp(35px,6vw,75px);margin:20px 0">CHALA UNIVERSES UNNAYI...<br><span class="red">BUT TODAY,</span><br>HERO LOKESH.</h2><p class="copy">Different worlds lo different heroes. Kaani mana world lo ee roju celebration ki centre stage okkadike. 🔥</p></div>
+
+  <div class="portal"></div>
+
+  <div class="inner">
+
+    <div class="label">
+      MULTIVERSE EVENT
+    </div>
+
+    <h2
+      style="
+        font-size:clamp(35px,6vw,75px);
+        margin:20px 0
+      ">
+
+      CHALA UNIVERSES UNNAYI...
+
+      <br>
+
+      <span class="red">
+        BUT TODAY,
+      </span>
+
+      <br>
+
+      HERO LOKESH.
+
+    </h2>
+
+    <p class="copy">
+
+      Different worlds lo different heroes.
+      Kaani mana world lo ee roju celebration ki
+      centre stage okkadike. 🔥
+
+    </p>
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     SURPRISE
+========================= -->
 
 <section class="surprise">
-<div><div class="label">CLASSIFIED</div><h2 style="font-size:clamp(32px,6vw,65px);margin-top:15px">ONE MORE THING...</h2><p class="copy">Ee button click chesthe special surprise unlock avuthundi. 👀</p>
-<div class="core" onclick="surprise()"><span>UNLOCK</span></div>
-<div id="message"><h2 style="color:#ffcc4d">SURPRISE UNLOCKED ⚡</h2><p>Lokesh, nee life lo next chapter inka crazy ga, happy ga, successful ga undali. Ee year full power tho enjoy cheyyi ra! ❤️🔥</p></div></div>
+
+  <div>
+
+    <div class="label">
+      CLASSIFIED
+    </div>
+
+    <h2
+      style="
+        font-size:clamp(32px,6vw,65px);
+        margin-top:15px
+      ">
+
+      ONE MORE THING...
+
+    </h2>
+
+    <p class="copy">
+
+      Ee button click chesthe
+      special surprise unlock avuthundi. 👀
+
+    </p>
+
+    <div
+      class="core"
+      onclick="surprise()">
+
+      <span>
+        UNLOCK
+      </span>
+
+    </div>
+
+    <div id="message">
+
+      <h2 style="color:#ffcc4d">
+        SURPRISE UNLOCKED ⚡
+      </h2>
+
+      <p>
+
+        Lokesh, nee life lo next chapter
+        inka crazy ga, happy ga,
+        successful ga undali.
+
+        Ee year full power tho
+        enjoy cheyyi ra! ❤️🔥
+
+      </p>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
 
 <section class="final">
-<div><div class="label">MISSION COMPLETE</div><h2>HAPPY <span>BIRTHDAY</span> LOKESH ❤️</h2><p class="copy">Ee year motham happiness, success & unforgettable moments tho fill avvali. 🔥</p></div>
+
+  <div>
+
+    <div class="label">
+      MISSION COMPLETE
+    </div>
+
+    <h2>
+
+      HAPPY
+
+      <span>
+        BIRTHDAY
+      </span>
+
+      LOKESH ❤️
+
+    </h2>
+
+    <p class="copy">
+
+      Ee year motham happiness,
+      success & unforgettable moments
+      tho fill avvali. 🔥
+
+    </p>
+
+  </div>
+
 </section>
 
-<footer>MADE FOR LOKESH • HERO MODE FOREVER ⚡</footer>
 
-<button class="music" id="musicBtn" onclick="musicToggle()">🔇</button>
-<audio id="music" loop preload="auto"><source src="assets/music.mp3" type="audio/mpeg"></audio>
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  MADE FOR LOKESH • HERO MODE FOREVER ⚡
+
+</footer>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<button
+  class="music"
+  id="musicBtn"
+  onclick="musicToggle()">
+
+  🔇
+
+</button>
+
+<audio
+  id="music"
+  loop
+  preload="auto">
+
+  <source
+    src="assets/music.mp3"
+    type="audio/mpeg">
+
+</audio>
+
 
 <script>
+
+/* =========================
+   ENTER CELEBRATION
+========================= */
+
 function enterSite(){
-  document.getElementById('music').play().then(()=>{
-    document.getElementById('musicBtn').textContent='🔊';
-  }).catch(()=>{});
-  document.getElementById('flash').animate([{opacity:0},{opacity:.8},{opacity:0}],{duration:700});
-  document.querySelector('.hero').scrollIntoView({behavior:'smooth'});
+
+  const music =
+    document.getElementById('music');
+
+  const musicBtn =
+    document.getElementById('musicBtn');
+
+  const flash =
+    document.getElementById('flash');
+
+  const scrollHint =
+    document.getElementById('scrollHint');
+
+
+  /* Start music */
+
+  music.play()
+    .then(()=>{
+
+      musicBtn.textContent='🔊';
+
+    })
+    .catch(()=>{});
+
+
+  /* Cinematic flash */
+
+  flash.animate(
+    [
+      {opacity:0},
+      {opacity:.8},
+      {opacity:0}
+    ],
+    {
+      duration:700,
+      easing:'ease-out'
+    }
+  );
+
+
+  /* Find next section */
+
+  const nextSection =
+    document
+      .querySelector('.hero')
+      .nextElementSibling;
+
+
+  /* Smooth scroll */
+
+  nextSection.scrollIntoView({
+    behavior:'smooth',
+    block:'start'
+  });
+
+
+  /* Show SCROLL DOWN */
+
+  setTimeout(()=>{
+
+    scrollHint.classList.add('show');
+
+    setTimeout(()=>{
+
+      scrollHint.classList.remove('show');
+
+    },5000);
+
+  },700);
+
 }
+
+
+/* =========================
+   SURPRISE
+========================= */
+
 function surprise(){
-  const m=document.getElementById('message'); m.style.display='block';
-  document.getElementById('flash').animate([{opacity:0},{opacity:.65},{opacity:0}],{duration:500});
+
+  const message =
+    document.getElementById('message');
+
+  message.style.display='block';
+
+
+  document
+    .getElementById('flash')
+    .animate(
+      [
+        {opacity:0},
+        {opacity:.65},
+        {opacity:0}
+      ],
+      {
+        duration:500
+      }
+    );
 }
+
+
+/* =========================
+   MUSIC TOGGLE
+========================= */
+
 function musicToggle(){
-  const a=document.getElementById('music'), b=document.getElementById('musicBtn');
-  if(a.paused){a.play();b.textContent='🔊'}else{a.pause();b.textContent='🔇'}
+
+  const audio =
+    document.getElementById('music');
+
+  const button =
+    document.getElementById('musicBtn');
+
+
+  if(audio.paused){
+
+    audio.play();
+
+    button.textContent='🔊';
+
+  }else{
+
+    audio.pause();
+
+    button.textContent='🔇';
+
+  }
+
 }
-const v=document.getElementById('bgVideo');
-v.addEventListener('error',()=>{v.style.display='none'});
+
+
+/* =========================
+   VIDEO ERROR FALLBACK
+========================= */
+
+const video =
+  document.getElementById('bgVideo');
+
+video.addEventListener(
+  'error',
+  ()=>{
+    video.style.display='none';
+  }
+);
+
 </script>
+
 </body>
 </html>
+```
