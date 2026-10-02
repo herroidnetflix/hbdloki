@@ -2,12 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Happy Birthday Lokesh ⚡ — Preview</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A special message for Lokesh ⚡</title>
+<meta name="theme-color" content="#02040a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Something special for Lokesh ⚡">
+<meta property="og:description" content="Hero mode: activated. Tap to open 👀">
+<meta property="og:image" content="https://herroidnetflix.github.io/hbdloki/assets/lokesh1.jpg">
+<meta property="og:url" content="https://herroidnetflix.github.io/hbdloki/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:#02040a;color:#fff;font-family:Arial,sans-serif;overflow-x:hidden}
+h1,h2,.brand,.openbtn{font-family:Orbitron,Arial,sans-serif}
 #bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-10;opacity:0;transition:opacity 1.4s}
 .shade{position:fixed;inset:0;z-index:-9;background:linear-gradient(#0007,#000d),radial-gradient(circle at center,transparent 0 25%,#000b 80%);opacity:0;transition:opacity 1.4s}
 .grid{position:fixed;inset:0;z-index:-7;opacity:0;background:linear-gradient(#278cff22 1px,transparent 1px),linear-gradient(90deg,#278cff22 1px,transparent 1px);background-size:70px 70px;transform:perspective(500px) rotateX(55deg) scale(1.8);transform-origin:center bottom;animation:grid 7s linear infinite;transition:opacity 1.4s}
@@ -16,86 +27,228 @@ body.started #bg,body.started .shade{opacity:1}
 body.started .grid{opacity:.18}
 #open{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:radial-gradient(circle,#101b2b,#010204 72%);transition:opacity .9s,visibility .9s}
 #open.hide{opacity:0;visibility:hidden;pointer-events:none}
-.openbox{text-align:center}
+.openbox{text-align:center;padding:20px}
 .openbox small{display:block;color:#ffcc4d;letter-spacing:6px;font-size:10px;margin-bottom:25px}
 .openbtn{padding:20px 38px;border:1px solid #ffffff66;background:#ffffff0d;color:white;letter-spacing:4px;font-weight:900;cursor:pointer;border-radius:5px;box-shadow:0 0 35px #fff1;transition:.3s}
 .openbtn:hover{transform:scale(1.06);border-color:#e62429;box-shadow:0 0 35px #e6242966}
 .openline{width:70px;height:1px;background:#e62429;margin:25px auto;box-shadow:0 0 20px #e62429}
+#count{font-family:Orbitron,Arial,sans-serif;color:#76b7ff;letter-spacing:3px;font-size:13px;min-height:18px}
 nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:18px 6%;display:flex;justify-content:space-between;background:linear-gradient(#000c,transparent);opacity:0;transform:translateY(-15px);transition:1s}
 body.started nav{opacity:1;transform:none}
 .brand{font-weight:900;letter-spacing:3px}.brand span,.red{color:#e62429}.status{font-size:10px;letter-spacing:2px;color:#76b7ff}
-section{min-height:100vh;padding:110px 7%;display:flex;align-items:center;justify-content:center;position:relative}
+section{min-height:100vh;min-height:100svh;padding:110px 7%;display:flex;align-items:center;justify-content:center;position:relative}
 .hero{text-align:center}.label{font-size:11px;letter-spacing:5px;color:#ffcc4d;font-weight:700}
-h1{font-size:clamp(55px,11vw,140px);line-height:.85;margin:25px 0;font-weight:1000;text-shadow:0 0 40px #000}
+h1{font-size:clamp(45px,10vw,130px);line-height:.95;margin:25px 0;font-weight:900;text-shadow:0 0 40px #000}
 h1 span{display:block;color:#e62429;text-shadow:0 0 35px #f00}
+h2{font-weight:900}
 p{color:#d0d7e5;line-height:1.8}.copy{max-width:720px;margin:25px auto}
 .enter{border:1px solid #fff5;background:linear-gradient(90deg,#780000,#e62429,#780000);color:white;padding:15px 25px;border-radius:5px;font-weight:800;letter-spacing:2px;cursor:pointer;box-shadow:0 0 30px #e6242944}
-.card{width:min(1050px,100%);padding:40px;border:1px solid #ffffff20;background:#05070db8;backdrop-filter:blur(18px);box-shadow:0 30px 100px #0008}
-.profile{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:20px}.profile img{width:100%;height:500px;object-fit:cover}.info{display:flex;flex-direction:column;justify-content:center}.info h2{font-size:clamp(40px,6vw,70px)}.line{display:flex;justify-content:space-between;padding:13px;margin-top:9px;background:#ffffff08;border-left:2px solid #e62429;font-size:11px;letter-spacing:2px}
-.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:min(1200px,100%);margin-top:20px}.photo{height:500px;position:relative;overflow:hidden;border:1px solid #ffffff20;cursor:pointer}.photo img{width:100%;height:100%;object-fit:cover;transition:.7s}.photo:hover img{transform:scale(1.08)}.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,#000d)}.photo b{position:absolute;z-index:2;bottom:20px;left:20px;letter-spacing:3px;font-size:11px}
+.card{width:min(1050px,100%);padding:40px;border:1px solid #ffffff20;background:#05070db8;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 30px 100px #0008}
+.profile{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:20px}.profile img{width:100%;height:500px;object-fit:cover}.info{display:flex;flex-direction:column;justify-content:center}.info h2{font-size:clamp(34px,5vw,64px)}
+.line{display:flex;justify-content:space-between;padding:13px;margin-top:9px;background:#ffffff08;border-left:2px solid #e62429;font-size:11px;letter-spacing:2px}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:min(1200px,100%);margin-top:20px}
+.photo{height:500px;position:relative;overflow:hidden;border:1px solid #ffffff20;cursor:pointer}.photo img{width:100%;height:100%;object-fit:cover;transition:.7s}.photo:hover img{transform:scale(1.08)}.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,#000d)}.photo b{position:absolute;z-index:2;bottom:20px;left:20px;letter-spacing:3px;font-size:11px}
 .portal{position:absolute;width:55vw;height:55vw;border-radius:50%;border:2px solid #178cff55;box-shadow:0 0 80px #087cff22,inset 0 0 80px #087cff22;animation:spin 15s linear infinite}.portal:after{content:"";position:absolute;inset:12%;border:1px solid #e6242966;border-radius:50%}@keyframes spin{to{transform:rotate(360deg)}}
 .multiverse{text-align:center}.inner{position:relative;z-index:2;max-width:800px}
-.core{width:180px;height:180px;border-radius:50%;margin:45px auto;background:radial-gradient(circle,#fff 0 3%,#ffcc4d 8%,#e62429 30%,#280000 55%,#02040a 70%);box-shadow:0 0 40px #e62429aa,0 0 120px #ff9d0022;display:grid;place-items:center;cursor:pointer;animation:pulse 2s infinite}.core span{font-size:11px;font-weight:900;letter-spacing:2px}@keyframes pulse{50%{transform:scale(1.08);box-shadow:0 0 65px #e62429dd,0 0 150px #ff9d0044}}
+.core{width:180px;height:180px;border-radius:50%;margin:45px auto;background:radial-gradient(circle,#fff 0 3%,#ffcc4d 8%,#e62429 30%,#280000 55%,#02040a 70%);box-shadow:0 0 40px #e62429aa,0 0 120px #ff9d0022;display:grid;place-items:center;cursor:pointer;animation:pulse 2s infinite;font-size:34px}@keyframes pulse{50%{transform:scale(1.08);box-shadow:0 0 65px #e62429dd,0 0 150px #ff9d0044}}
 footer{text-align:center;padding:30px;color:#667085;font-size:10px;letter-spacing:2px}
 .music{position:fixed;right:20px;bottom:20px;z-index:30;width:54px;height:54px;border-radius:50%;border:1px solid #fff3;background:#050812cc;color:#fff;cursor:pointer;opacity:0;pointer-events:none;transition:.6s}.started .music{opacity:1;pointer-events:auto}
 #flash{position:fixed;inset:0;background:white;opacity:0;pointer-events:none;z-index:90}
-#surprise{position:fixed;inset:0;z-index:80;display:none;place-items:center;background:#010207ee;backdrop-filter:blur(12px);padding:30px}
+#surprise{position:fixed;inset:0;z-index:80;display:none;place-items:center;background:#010207ee;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:30px;overflow:auto}
 #surprise.show{display:grid}
 .sbox{width:min(900px,100%);text-align:center}
-.sbox h2{font-size:clamp(38px,8vw,90px);color:#ffcc4d;margin-bottom:10px}
-.sbox .sub{letter-spacing:5px;color:#e62429;font-weight:900}
+.sbox h2{font-size:clamp(34px,7vw,80px);color:#ffcc4d;margin-bottom:10px}
+.sbox .sub{letter-spacing:5px;color:#e62429;font-weight:900;font-size:12px}
 .revealpics{display:flex;justify-content:center;gap:15px;margin:28px 0;flex-wrap:wrap}
-.revealpics img{width:220px;height:290px;object-fit:cover;border:1px solid #fff3;box-shadow:0 0 30px #e6242944;opacity:0;transform:translateY(25px) scale(.95);animation:picin .7s forwards}
-.revealpics img:nth-child(2){animation-delay:.35s}.revealpics img:nth-child(3){animation-delay:.7s}
+.revealpics img{width:220px;height:290px;object-fit:cover;border:1px solid #fff3;box-shadow:0 0 30px #e6242944;opacity:0;transform:translateY(25px) scale(.95);cursor:pointer}
+.show .revealpics img{animation:picin .7s forwards}
+.show .revealpics img:nth-child(2){animation-delay:.35s}.show .revealpics img:nth-child(3){animation-delay:.7s}
 @keyframes picin{to{opacity:1;transform:none}}
 .sbox p{max-width:650px;margin:auto}.close{margin-top:25px;padding:12px 20px;background:#ffffff12;border:1px solid #fff4;color:#fff;border-radius:4px;cursor:pointer}
-@media(max-width:800px){.status{display:none}.profile{grid-template-columns:1fr}.profile img{height:420px}.photos{grid-template-columns:1fr}.photo{height:430px}.card{padding:25px}.revealpics img{width:29vw;height:38vw}}
+#lightbox{position:fixed;inset:0;z-index:95;display:none;place-items:center;background:#000f;padding:16px}
+#lightbox.show{display:grid}
+#lightbox img{max-width:100%;max-height:92vh;object-fit:contain;box-shadow:0 0 60px #e6242944}
+#lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);background:#ffffff14;border:1px solid #fff3;color:#fff;width:46px;height:46px;border-radius:50%;font-size:20px;cursor:pointer}
+#lightbox .prev{left:12px}#lightbox .next{right:12px}
+#lightbox .x{position:absolute;top:14px;right:14px;background:#ffffff14;border:1px solid #fff3;color:#fff;width:42px;height:42px;border-radius:50%;font-size:18px;cursor:pointer}
+.confetti{position:fixed;top:-20px;width:8px;height:14px;z-index:99;pointer-events:none}
+button:focus-visible{outline:2px solid #ffcc4d;outline-offset:3px}
+@media(max-width:800px){.status{display:none}.profile{grid-template-columns:1fr}.profile img{height:420px}.photos{grid-template-columns:1fr}.photo{height:430px}.card{padding:25px}.revealpics img{width:29vw;height:38vw}.core{width:150px;height:150px}}
+@media(prefers-reduced-motion:reduce){.grid,.portal,.core{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div id="open"><div class="openbox"><small>A SPECIAL CELEBRATION</small><button class="openbtn" onclick="start()">CLICK TO OPEN</button><div class="openline"></div></div></div>
-<video id="bg" muted loop playsinline preload="auto"><source src="assets/avengers-bg.mp4" type="video/mp4"></video>
+
+<div id="open"><div class="openbox">
+  <small>A SPECIAL CELEBRATION</small>
+  <button class="openbtn" onclick="start()">CLICK TO OPEN</button>
+  <div class="openline"></div>
+  <div id="count"></div>
+</div></div>
+
+<video id="bg" muted loop playsinline preload="auto" poster="assets/lokesh1.jpg"><source src="assets/avengers-bg.mp4" type="video/mp4"></video>
 <div class="shade"></div><div class="grid"></div><div id="flash"></div>
-<nav><div class="brand"><span>HBD</span> LOKESH</div><div class="status">● HappyBirthdayy</div></nav>
 
-<section class="hero"><div><div class="label">SPECIAL DAY // 3RD OCTOBER</div><h1>HAPPY <span>BIRTHDAY</span></h1><p class="copy">Team lo chala mandi heroes unna... kaani ee roju spotlight motham okka hero meedhe. <b>LOKESH.</b> ⚡</p><button class="enter" onclick="document.querySelector('.db').scrollIntoView({behavior:'smooth'})">⚡ ENTER THE CELEBRATION</button></div></section>
+<nav><div class="brand"><span>HBD</span> LOKESH</div><div class="status">● HAPPY BIRTHDAY</div></nav>
 
-<section class="db"><div class="card"><div class="label">HERO DATABASE</div><div class="profile"><img src="assets/lokesh1.jpg"><div class="info"><h2>LOK<span class="red">ESH</span></h2><p class="copy">Ee roju ordinary birthday kaadu. Mana own hero ki special celebration. ❤️ Full year happiness, success, crazy moments tho super ga undali.</p><div class="line"><span>CODENAME</span><span>LOKESH</span></div><div class="line"><span>STATUS</span><span>LEGENDARY</span></div><div class="line"><span>POWER LEVEL</span><span>∞</span></div><div class="line"><span>MISSION</span><span>ENJOY LIFE</span></div></div></div></div></section>
+<section class="hero"><div>
+  <div class="label">SPECIAL DAY // 3RD OCTOBER</div>
+  <h1>HAPPY <span>BIRTHDAY</span></h1>
+  <p class="copy">Team lo chala mandi heroes unna... kaani ee roju spotlight motham okka hero meedhe. <b>LOKESH.</b> ⚡</p>
+  <button class="enter" onclick="document.querySelector('.db').scrollIntoView({behavior:'smooth'})">⚡ ENTER THE CELEBRATION</button>
+</div></section>
 
-<section><div style="width:100%;max-width:1200px"><div class="label">HERO ARCHIVE</div><h2 style="font-size:clamp(32px,6vw,65px);margin:15px 0 25px">THREE MOMENTS</h2><p>Select Your Favorite Picture</p><div class="photos"><div class="photo"><img src="assets/lokesh1.jpg"><b>LOKI // 01</b></div><div class="photo"><img src="assets/lokesh2.jpg"><b>LOKI // 02</b></div><div class="photo"><img src="assets/lokesh3.jpg"><b>LOKI // 03</b></div></div></div></section>
+<section class="db"><div class="card">
+  <div class="label">HERO DATABASE</div>
+  <div class="profile">
+    <img src="assets/lokesh1.jpg" alt="Lokesh">
+    <div class="info">
+      <h2>LOK<span class="red">ESH</span></h2>
+      <p class="copy">Ee roju ordinary birthday kaadu. Mana own hero ki special celebration. ❤️ Full year happiness, success, crazy moments tho super ga undali.</p>
+      <div class="line"><span>CODENAME</span><span>LOKESH</span></div>
+      <div class="line"><span>STATUS</span><span>LEGENDARY</span></div>
+      <div class="line"><span>POWER LEVEL</span><span>∞</span></div>
+      <div class="line"><span>MISSION</span><span>ENJOY LIFE</span></div>
+    </div>
+  </div>
+</div></section>
 
-<section class="multiverse"><div class="portal"></div><div class="inner"><div class="label">MULTIVERSE EVENT</div><h2 style="font-size:clamp(35px,6vw,75px);margin:20px 0">CHALA UNIVERSES UNNAYI...<br><span class="red">BUT TODAY,</span><br>HERO LOKESH.</h2><p class="copy">Different worlds lo different heroes. Kaani mana world lo ee roju celebration ki centre stage okkadike. 🔥</p></div></section>
+<section><div style="width:100%;max-width:1200px">
+  <div class="label">HERO ARCHIVE</div>
+  <h2 style="font-size:clamp(30px,6vw,60px);margin:15px 0 25px">THREE MOMENTS</h2>
+  <p>Tap a picture to view it full size</p>
+  <div class="photos">
+    <div class="photo" data-i="0"><img src="assets/lokesh1.jpg" alt="Lokesh 1" loading="lazy"><b>LOKI // 01</b></div>
+    <div class="photo" data-i="1"><img src="assets/lokesh2.jpg" alt="Lokesh 2" loading="lazy"><b>LOKI // 02</b></div>
+    <div class="photo" data-i="2"><img src="assets/lokesh3.jpg" alt="Lokesh 3" loading="lazy"><b>LOKI // 03</b></div>
+  </div>
+</div></section>
 
-<section style="text-align:center"><div><div class="label">CLASSIFIED</div><h2 style="font-size:clamp(32px,6vw,65px);margin-top:15px">ONE MORE THING...</h2><p class="copy">Ee button click chesthe special surprise unlock avuthundi. 👀</p><div class="core" onclick="surprise()">⚡</div><div style="letter-spacing:3px;font-size:11px">UNLOCK SURPRISE</div></div></section>
+<section class="multiverse"><div class="portal"></div><div class="inner">
+  <div class="label">MULTIVERSE EVENT</div>
+  <h2 style="font-size:clamp(30px,6vw,70px);margin:20px 0">CHALA UNIVERSES UNNAYI...<br><span class="red">BUT TODAY,</span><br>HERO LOKESH.</h2>
+  <p class="copy">Different worlds lo different heroes. Kaani mana world lo ee roju celebration ki centre stage okkadike. 🔥</p>
+</div></section>
 
-<section style="text-align:center"><div><div class="label">MISSION COMPLETE</div><h2 style="font-size:clamp(45px,9vw,110px);line-height:.9">HAPPY <span class="red">BIRTHDAY</span> LOKESH ❤️</h2><p class="copy">Ee year motham happiness, success & unforgettable moments tho fill avvali. 🔥</p><div style="font-size:14px;letter-spacing:4px;margin-top:25px">HERO MODE: ACTIVATED ⚡</div></div></section>
+<section style="text-align:center"><div>
+  <div class="label">CLASSIFIED</div>
+  <h2 style="font-size:clamp(30px,6vw,60px);margin-top:15px">ONE MORE THING...</h2>
+  <p class="copy">Ee button click chesthe special surprise unlock avuthundi. 👀</p>
+  <div class="core" onclick="surprise()" role="button" tabindex="0" aria-label="Unlock surprise" onkeydown="if(event.key==='Enter')surprise()">⚡</div>
+  <div style="letter-spacing:3px;font-size:11px">UNLOCK SURPRISE</div>
+</div></section>
+
+<section style="text-align:center"><div>
+  <div class="label">MISSION COMPLETE</div>
+  <h2 style="font-size:clamp(40px,9vw,105px);line-height:1">HAPPY <span class="red">BIRTHDAY</span> LOKESH ❤️</h2>
+  <p class="copy">Ee year motham happiness, success &amp; unforgettable moments tho fill avvali. 🔥</p>
+  <div style="font-size:14px;letter-spacing:4px;margin-top:25px">HERO MODE: ACTIVATED ⚡</div>
+</div></section>
 <footer>MADE FOR LOKESH • HERO MODE FOREVER ⚡</footer>
 
-<button class="music" id="mb" onclick="toggleMusic()">🔊</button>
+<button class="music" id="mb" onclick="toggleMusic()" aria-label="Toggle music">🔊</button>
 <audio id="music" loop preload="auto"><source src="assets/music.mp3" type="audio/mpeg"></audio>
 
-<div id="surprise"><div class="sbox"><div class="sub">CLASSIFIED // MEMORY CORE</div><h2>SURPRISE UNLOCKED ⚡</h2><div class="revealpics"><img src="assets/lokesh1.jpg"><img src="assets/lokesh2.jpg"><img src="assets/lokesh3.jpg"></div><p><b>HAPPY BIRTHDAY LOKESH ❤️</b><br><br>Ee memories anni just photos kaadu... mana memories. Ee year full happiness, crazy moments & unforgettable memories tho nindipovali! 🔥</p><button class="close" onclick="closeSurprise()">CONTINUE THE CELEBRATION</button></div></div>
+<div id="surprise"><div class="sbox">
+  <div class="sub">CLASSIFIED // MEMORY CORE</div>
+  <h2>SURPRISE UNLOCKED ⚡</h2>
+  <div class="revealpics">
+    <img src="assets/lokesh1.jpg" alt="" data-i="0"><img src="assets/lokesh2.jpg" alt="" data-i="1"><img src="assets/lokesh3.jpg" alt="" data-i="2">
+  </div>
+  <p><b>HAPPY BIRTHDAY LOKESH ❤️</b><br><br>Ee memories anni just photos kaadu... mana memories. Ee year full happiness, crazy moments &amp; unforgettable memories tho nindipovali! 🔥</p>
+  <button class="close" onclick="closeSurprise()">CONTINUE THE CELEBRATION</button>
+</div></div>
+
+<div id="lightbox">
+  <button class="x" onclick="closeLB()" aria-label="Close">✕</button>
+  <button class="nav prev" onclick="stepLB(-1)" aria-label="Previous">‹</button>
+  <img id="lbimg" alt="">
+  <button class="nav next" onclick="stepLB(1)" aria-label="Next">›</button>
+</div>
 
 <script>
-function start(){
- document.body.classList.add('started');
- document.getElementById('open').classList.add('hide');
- const v=document.getElementById('bg'),m=document.getElementById('music');
- document.getElementById('flash').animate([{opacity:0},{opacity:.85},{opacity:0}],{duration:850});
- v.play().catch(()=>{});
- m.play().then(()=>document.getElementById('mb').textContent='🔊').catch(()=>document.getElementById('mb').textContent='🔇');
-}
-function surprise(){
- document.getElementById('surprise').classList.add('show');
- document.getElementById('flash').animate([{opacity:0},{opacity:.95},{opacity:0}],{duration:900});
-}
-function closeSurprise(){document.getElementById('surprise').classList.remove('show')}
-function toggleMusic(){
- const m=document.getElementById('music'),b=document.getElementById('mb');
- if(m.paused){m.play();b.textContent='🔊'}else{m.pause();b.textContent='🔇'}
-}
+const $=id=>document.getElementById(id);
+const PICS=['assets/lokesh1.jpg','assets/lokesh2.jpg','assets/lokesh3.jpg'];
+let lbIndex=0;
+
+/* lock scroll until the gate is opened */
 document.body.style.overflow='hidden';
-setTimeout(()=>{document.body.style.overflow='auto'},0);
+
+function start(){
+  document.body.classList.add('started');
+  $('open').classList.add('hide');
+  document.body.style.overflow='auto';
+  $('flash').animate([{opacity:0},{opacity:.85},{opacity:0}],{duration:850});
+  $('bg').play().catch(()=>{});
+  $('music').play().then(()=>$('mb').textContent='🔊').catch(()=>$('mb').textContent='🔇');
+  if(isBirthday()) setTimeout(confetti,900);
+}
+
+function toggleMusic(){
+  const m=$('music'),b=$('mb');
+  if(m.paused){m.play();b.textContent='🔊'}else{m.pause();b.textContent='🔇'}
+}
+
+/* surprise */
+function surprise(){
+  $('surprise').classList.add('show');
+  $('flash').animate([{opacity:0},{opacity:.95},{opacity:0}],{duration:900});
+  confetti();
+}
+function closeSurprise(){$('surprise').classList.remove('show')}
+$('surprise').addEventListener('click',e=>{if(e.target.id==='surprise')closeSurprise()});
+
+/* lightbox (full-size photos) */
+function openLB(i){lbIndex=i;$('lbimg').src=PICS[i];$('lightbox').classList.add('show')}
+function closeLB(){$('lightbox').classList.remove('show')}
+function stepLB(d){lbIndex=(lbIndex+d+PICS.length)%PICS.length;$('lbimg').src=PICS[lbIndex]}
+document.querySelectorAll('.photo,.revealpics img').forEach(el=>el.addEventListener('click',()=>openLB(+el.dataset.i)));
+$('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')closeLB()});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeLB();closeSurprise()}
+  if($('lightbox').classList.contains('show')){
+    if(e.key==='ArrowRight')stepLB(1);
+    if(e.key==='ArrowLeft')stepLB(-1);
+  }
+});
+let tx=0;
+$('lightbox').addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+$('lightbox').addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-tx;
+  if(Math.abs(dx)>50)stepLB(dx<0?1:-1);
+});
+
+/* confetti */
+function confetti(){
+  const colors=['#e62429','#ffcc4d','#178cff','#ffffff'];
+  for(let i=0;i<90;i++){
+    const c=document.createElement('i');
+    c.className='confetti';
+    c.style.left=Math.random()*100+'vw';
+    c.style.background=colors[i%4];
+    document.body.appendChild(c);
+    c.animate(
+      [{transform:'translateY(0) rotate(0)',opacity:1},
+       {transform:`translateY(110vh) translateX(${(Math.random()-.5)*160}px) rotate(${Math.random()*900}deg)`,opacity:1}],
+      {duration:2200+Math.random()*2200,easing:'cubic-bezier(.3,.6,.6,1)',delay:Math.random()*400}
+    ).onfinish=()=>c.remove();
+  }
+}
+
+/* countdown to 3 Oct (viewer's local midnight) */
+const now0=new Date();
+let target=new Date(now0.getFullYear(),9,3,0,0,0);
+function isBirthday(){const n=new Date();return n.getMonth()===9&&n.getDate()===3}
+function tick(){
+  const el=$('count'),n=new Date();
+  if(isBirthday()){el.textContent='IT\u2019S TODAY ⚡';return}
+  const diff=target-n;
+  if(diff<=0){el.textContent='';return}
+  const d=Math.floor(diff/864e5),h=Math.floor(diff%864e5/36e5),m=Math.floor(diff%36e5/6e4),s=Math.floor(diff%6e4/1e3);
+  el.textContent='BIRTHDAY IN '+(d?d+'D ':'')+String(h).padStart(2,'0')+'H '+String(m).padStart(2,'0')+'M '+String(s).padStart(2,'0')+'S';
+}
+if(now0>target&&!isBirthday())target=new Date(now0.getFullYear()+1,9,3);
+tick();setInterval(tick,1000);
 </script>
 </body>
 </html>
